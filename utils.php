@@ -5,12 +5,25 @@ require_once 'dbcon.php';
 function storeSchedule($scharray) 
 {
     global $mysql, $NUM_SLOTS, $NUM_TRACKS;
+ 
+    
+    error_log(print_r($scharray, true));
     
     mysqli_query($mysql, "delete from sch_generated_schedule");
     $stmt = mysqli_prepare($mysql, "insert into sch_generated_schedule (timeslot, track, session) values (?, ?, ?)");
     for ($i = 0; $i < $NUM_SLOTS; $i++) {
         for ($j = 0; $j < $NUM_TRACKS; $j++) {
-            mysqli_stmt_bind_param($stmt, "iii", $i, $j, $scharray[$i][$j]['session']);
+            
+            
+            $store_session = null;
+            
+            if ($scharray[$i][$j] != null)
+            {
+                $store_session = $scharray[$i][$j]['session'];
+            }
+            
+            
+            mysqli_stmt_bind_param($stmt, "iii", $i, $j, $store_session);
             mysqli_stmt_execute($stmt);
         }
         

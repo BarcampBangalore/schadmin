@@ -86,7 +86,7 @@ and open the template in the editor.
 
 //            printSnapshot($currentschedule);
 
-            if ($selectedindex == $NUM_SLOTS * $NUM_TRACKS)
+            if ($selectedindex == $NUM_SLOTS * $NUM_TRACKS || $selectedindex == (count($selected_sessions)))
             {
                 // take snapshot and return
                 //////////////////////

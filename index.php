@@ -118,14 +118,14 @@ require_once 'header.php';
                         
                         $("#currentpool_count").html(i);
                         
-                        if (i != <?php echo $NUM_CELLS; ?> )
-                        {
-                            $("#scheduling_link").hide();
-                        }
-                        else
-                        {
-                            $("#scheduling_link").show();
-                        }
+//                        if (i != <?php echo $NUM_CELLS; ?> )
+//                        {
+//                            $("#scheduling_link").hide();
+//                        }
+//                        else
+//                        {
+//                            $("#scheduling_link").show();
+//                        }
                         
                     }
                     

@@ -16,26 +16,53 @@ if(isset($_REQUEST['mode'])) {
 		}
 	}
 
-	$sessions_list_unique = array_unique($sessions_list, SORT_NUMERIC);
+	$sessions_list_unique = array();
+    $duplicate_found = false;
 
-//	if(count($sessions_list) == count($sessions_list_unique) ) {
+
 		$submit_array = array();
 
 		for($i = 0; $i < $NUM_SLOTS; $i++) {
 			$submit_array[$i] = array();
 			for($j = 0; $j < $NUM_TRACKS; $j++) {
-				$submit_array[$i][$j] = array( 'session' => $_REQUEST[$i.'_'.$j], 'usercount' => 0 );
+                if ($_REQUEST[$i.'_'.$j] == "null")
+                {
+                    $submit_array[$i][$j] = null;
+                }
+                else
+                {
+                    if (in_array($_REQUEST[$i.'_'.$j], $sessions_list_unique))
+                    {
+                        $duplicate_found = true;
+                        $message .= "|".$i.'_'.$j;
+                        //break;
+                    }
+                    array_push($sessions_list_unique, $_REQUEST[$i.'_'.$j]);
+                    $submit_array[$i][$j] = array( 'session' => $_REQUEST[$i.'_'.$j], 'usercount' => 0 );
+                }
+				
 			}
+            
+            if ($duplicate_found == true)
+            {
+                //break;
+            }
+            
 		}
-		storeSchedule($submit_array);
-//	}
-//	else {
+        
+        if ($duplicate_found == true)
+        {
+            $message = "Duplicates in the submitted sessions! Please submit again..." . $message;
+        }
+        storeSchedule($submit_array);
+		
+
 //		echo count($sessions_list).'  '.count($sessions_list_unique);
-//		$message = "Duplicates in the submitted sessions! Please submit again...";
-//	}
+//		
+
 }
 
-$query = new WP_Query( array( "cat" => $THIS_BCB_CATEGORY) );
+$query = new WP_Query( array("orderby" => 'author title', "order" => 'ASC', "cat" => $THIS_BCB_CATEGORY ) );
 
 $sessions = array();
 if($query->have_posts()) {
@@ -56,6 +83,7 @@ $schedule = getSchedule();
 function printSelect( $sel_name, $curr_session_id ) {
 	global $sessions;
 	echo '<select name="'.$sel_name.'">';
+    echo '<option value="null" >Empty Slot</option>';
 	foreach($sessions as $session) {
 		echo '<option value="'.$session['id'].'"'.($session['id'] == $curr_session_id ? 'selected="selected"' : '').'>'.$session['author'].' - '.$session['title'].'</option>';
 	}

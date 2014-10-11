@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_assoc($result))
         
         if ($stts ==  false)
         {
-            
+            echo "Error while adding session-user mapping : $postid - $userid";
         }
         
         
