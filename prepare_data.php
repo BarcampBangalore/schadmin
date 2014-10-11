@@ -22,23 +22,33 @@ while ($row = mysqli_fetch_assoc($result))
     
     $attending_users = attending_users($postid);
     
-    echo $postid." - ".count($attending_users)."\n";
+    
+    echo "\n\n<br><br>POST - " .$postid." - ".count($attending_users)."<br><br>\n";
+    
+    echo "\n<br>XXXAttending Users - ".print_r($attending_users, true);
     
     foreach ($attending_users as $user)
     {
+        echo "\n<br>User : ".$user;
         $userobj = get_user_by("login", $user);
         $userid = $userobj->ID;
+        echo "<br><pre>";
+        echo print_r($userobj, true);
+        echo "</pre><br>";
         
-        $stts = mysqli_stmt_bind_param($stmt, "ii", $postid, $userid);
-        
-        $stts = mysqli_stmt_execute($stmt);
-        
-        if ($stts ==  false)
+        if ($userid != null)
         {
-            echo "Error while adding session-user mapping : $postid - $userid";
+            $stts = mysqli_stmt_bind_param($stmt, "ii", $postid, $userid);
+
+            $stts = mysqli_stmt_execute($stmt);
+
+            if ($stts ==  false)
+            {
+                echo "\n<br>Error while adding session-user mapping : $postid - $userid";
+                echo "\n<br>Error Message - ".mysqli_error($mysql);
+            }
+
         }
-        
-        
     }
     
     

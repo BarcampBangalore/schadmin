@@ -68,6 +68,11 @@ and open the template in the editor.
             array_push($selected_sessions, array('session' => $row['session'], 'usercount' => $row['usercount']));
         }
 
+        echo "<pre>SESSIONS FOUND - \n\n". print_r($selected_sessions)."\n\n<pre>";
+        
+        
+        
+        
         function scheduleNext($selectedindex, $clashcount)
         {
             global $NUM_SLOTS;

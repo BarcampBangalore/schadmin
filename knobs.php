@@ -65,7 +65,15 @@ $SLOTS[] = array("type" => "session", "start" => "1545", "end" => "1630", "displ
 $SLOTS[] = array("type" => "session", "start" => "1630", "end" => "1715", "display_string" => "4:30PM - 5:15PM", "name" => "Slot 6" );
 $SLOTS[] = array("type" => "fixed", "start" => "1730", "end" => "1815", "display_string" => "5:30PM - 6:15PM", "name" => "Feedback" );
 
-$TRACK_COLOR_MAPPING = array( 933 => "#B66B61", 934 => "#D35D5D", 935 => "#777DD1", 936 => "#AA8E5D", 940 => "#879958", 941 => "#7CB4F1", 942 => "#EB9E58", 943 => "#756480" );
+$TRACK_COLOR_MAPPING = array( 
+    1058 => "#770B47", 
+    1059 => "#0B5477", 
+    1060 => "#211B6D", 
+    1061 => "#789C18", 
+    1062 => "#2D88EC", 
+    1063 => "#E28815", 
+    1064 => "#701E7F", 
+    1065 => "#9E2B1C" );
 
 $DIFFICULTY_TAGS = array(945, 947, 946);
 ?>
