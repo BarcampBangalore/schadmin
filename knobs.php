@@ -15,7 +15,7 @@ $NUM_SLOTS = 6;
 $NUM_CELLS = $NUM_SLOTS * $NUM_TRACKS;
 
 // this is the category number for the current barcamp. 
-$THIS_BCB_CATEGORY = 931;  //bcb 15
+$THIS_BCB_CATEGORY = 1057;  //bcb 16
 
 
 //$THIS_BCB_CATEGORY = 4 ;
