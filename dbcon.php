@@ -1,4 +1,4 @@
 <?php
 
-$mysql = mysqli_connect("localhost", "root", "G22x%1X*j#oIs@I8TMs3Mvi#", "bcbwp");
+$mysql = mysqli_connect("localhost", "root", "dAZlWyErpdTfwrXJh6v9GxX", "bcbwp");
 ?>

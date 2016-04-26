@@ -1,0 +1,110 @@
+{
+	"status": "Sessions have not been alloted yet",
+	"version": 50,
+	"slots": [{
+    	"type": "fixed",
+    	"description" : "Registration will start at 8am. If you are a planning to take a session, please be there by 8am as the slots are available only on first come first serve basis",
+    	"startTime": "0800",
+    	"endTime": "0900",
+    	"time": "8:00AM - 9:00AM",
+    	"name": "Registration",
+    	"id": 1
+	}, {
+    	"type": "fixed",
+    	"startTime": "0900",
+    	"endTime": "0930",
+    	"time": "9:00AM - 9:30AM",
+    	"name": "Introduction",
+	"description" : "This your chance to learn how Barcamp is different for your regular conference. Veterans please take time to educate the new participants about the philosphy of the event", 
+    	"id": 2
+	}, {
+    	"type": "session",
+    	"startTime": "0945",
+    	"endTime": "1030",
+    	"time": "9:45AM - 10:30AM",
+    	"name": "Slot 1",
+    	"id": 3,
+    	"sessions": []
+	}, {
+    	"type": "fixed",
+    	"startTime": "1030",
+    	"endTime": "1100",
+    	"time": "10:30AM - 11:00AM",
+    	"name": "Break 1",
+	"description" : "First Break. Have tea/coffee and meet with people. Interesting conversations brew up in the breaks", 
+    	"id": 4
+	}, {
+    	"type": "session",
+    	"startTime": "1100",
+    	"endTime": "1145",
+    	"time": "11:00AM - 11:45AM",
+    	"name": "Slot 2",
+    	"id": 5,
+    	"sessions": []
+	}, {
+    	"type": "session",
+    	"startTime": "1145",
+    	"endTime": "1230",
+    	"time": "11:45AM - 12:30AM",
+    	"name": "Slot 3",
+    	"id": 6,
+    	"sessions": []
+	}, {
+    	"type": "fixed",
+    	"startTime": "1230",
+    	"endTime": "1330",
+    	"time": "12:30AM - 13:30AM",
+    	"name": "Lunch",
+    	"id": 7,
+        "description" : "Lunch Hour. Give the brain a rest and feed the stomach"
+	}, {
+    	"type": "fixed",
+    	"startTime": "1330",
+    	"endTime": "1430",
+    	"time": "1:30PM - 2:30PM",
+    	"name": "Techlash",
+	"description" : "Techlash is barcamp on rapidfire. Quick 6 min sessions showcasing amazing stuff people have been working on.", 
+    	"id": 8
+	}, {
+    	"type": "session",
+    	"startTime": "1430",
+    	"endTime": "1515",
+    	"time": "2:30PM - 3:15PM",
+    	"name": "Slot 4",
+    	"id": 9,
+    	"sessions": []
+	}, {
+    	"type": "fixed",
+    	"startTime": "1515",
+    	"endTime": "1545",
+    	"time": "3:15PM - 3:45PM",
+    	"name": "Break 2",
+            "description" : "Second Break. Have tea/coffee and meet with people. Interesting conversations brew up in the breaks", 
+    	"id": 10
+	}, {
+    	"type": "session",
+    	"startTime": "1545",
+    	"endTime": "1630",
+    	"time": "3:45PM - 4:30PM",
+    	"name": "Slot 5",
+    	"id": 11,
+    	"sessions": []
+	}, {
+    	"type": "session",
+    	"startTime": "1630",
+    	"endTime": "1715",
+    	"time": "4:30PM - 5:15PM",
+    	"name": "Slot 6",
+    	"id": 12,
+    	"sessions": []
+	}, {
+    	"type": "fixed",
+    	"startTime": "1730",
+    	"endTime": "1815",
+    	"time": "5:30PM - 6:15PM",
+    	"name": "Feedback",
+             "description" : "Feedback Session. In a BCB tradition we all meet at the end of the day and talk about what was good and what can be done better", 
+    	"id": 13
+	}],
+	"tracks": ["Asteroids", "Battleship", "Contra", "Diablo", "Everquest", "Fable"]
+}

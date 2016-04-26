@@ -5,20 +5,24 @@ require_once 'props_store.php';
 require_once 'utils.php';
 require_once 'knobs.php';
 
-$json_file = "android_bcb15.json";
+//$json_file = "android_bcb15.json";
+$json_file = "android.json";
 //$json_file = "test.json";
 
 if (isset($_REQUEST['mode']))
 {
     if ($_REQUEST['mode'] == "pre")
     {
-        $aj = array();
-        $aj['status'] = 'The schedule for Barcamp is created on the morning itself. In the mean time have a look at the <a href="http://barcampbangalore.org/bcb/sessions">registered sessions</a> for this barcamp.';
+        
+        $pre_event_json = file_get_contents("pre_event.json");
+        
         $file = fopen($json_file, "w");
-        echo fwrite($file, json_encode($aj));
+//        echo fwrite($file, json_encode($aj));
+        fwrite($file, $pre_event_json);
         fclose($file);
 
-        print_r($aj);
+        header('Content-type: application/json');
+        print_r($pre_event_json);
         exit;
     }
 }
@@ -26,7 +30,7 @@ if (isset($_REQUEST['mode']))
 define('WP_USE_THEMES', false);
 
 /** Loads the WordPress Environment and Template */
-require($WP_BLOG_HEADER_PATH);
+require_once($WP_BLOG_HEADER_PATH);
 header("HTTP/1.1 200 OK");
 
 $aj = array();
@@ -53,7 +57,7 @@ $schedulableSlotCounter = 0;
 
 $slotsArray = array();
 
-function get_avatar_url($get_avatar)
+function get_bcb_avatar_url($get_avatar)
 {
     preg_match("/src=['\"](.*?)['\"]/i", $get_avatar, $matches);
     return $matches[1];
@@ -70,6 +74,7 @@ foreach ($SLOTS as $slot)
         $t['endTime'] = $slot['end'];
         $t['time'] = $slot['display_string'];
         $t['name'] = $slot['name'];
+        $t['description'] = $slot['description'];
         $t['id'] = ++$slotCounter;
     } else
     { // type session
@@ -112,7 +117,7 @@ foreach ($SLOTS as $slot)
                             $s['presenter'] = $userobj->data->user_nicename;
                         }
                         $photo = get_avatar(get_the_author_meta('ID'), 96);
-                        $s['photo'] = get_avatar_url($photo);
+                        $s['photo'] = get_bcb_avatar_url($photo);
 
                         
                         $cats = get_the_category();

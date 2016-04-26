@@ -15,12 +15,12 @@ $NUM_SLOTS = 6;
 $NUM_CELLS = $NUM_SLOTS * $NUM_TRACKS;
 
 // this is the category number for the current barcamp. 
-$THIS_BCB_CATEGORY = 1057;  //bcb 16
+$THIS_BCB_CATEGORY = 1556;  //bcb 18
 
 
 //$THIS_BCB_CATEGORY = 4 ;
 
-$WP_BLOG_HEADER_PATH = '../bcb/wp-blog-header.php';
+$WP_BLOG_HEADER_PATH = '../wp-blog-header.php';
 
 //$WP_BLOG_HEADER_PATH = '../wordpressacer/wp-blog-header.php';
 
@@ -65,15 +65,42 @@ $SLOTS[] = array("type" => "session", "start" => "1545", "end" => "1630", "displ
 $SLOTS[] = array("type" => "session", "start" => "1630", "end" => "1715", "display_string" => "4:30PM - 5:15PM", "name" => "Slot 6" );
 $SLOTS[] = array("type" => "fixed", "start" => "1730", "end" => "1815", "display_string" => "5:30PM - 6:15PM", "name" => "Feedback" );
 
+
+// put the descriptions for fixed sessions
+$SLOTS[0]["description"] = "Registration will start at 8am. If you are a planning to take a session, please be there by 8am as the slots are available only on first come first serve basis";
+$SLOTS[1]["description"] = "This your chance to learn how Barcamp is different for your regular conference. Veterans please take time to educate the new participants about the philosphy of the event";
+$SLOTS[3]["description"] = "First Break. Have tea/coffee and meet with people. Interesting conversations brew up in the breaks";
+$SLOTS[6]["description"] = "Lunch Hour. Give the brain a rest and feed the stomach";
+$SLOTS[7]["description"] = "Techlash is barcamp on rapidfire. Quick 6 min sessions showcasing amazing stuff people have been working on.";
+$SLOTS[9]["description"] = "Second Break. Have tea/coffee and meet with people. Interesting conversations brew up in the breaks";
+$SLOTS[12]["description"] = "Feedback Session. In a BCB tradition we all meet at the end of the day and talk about what was good and what can be done better";
+
+//hack
+//$TRACK_COLOR_MAPPING = array( 
+//    1460 => "#770B47", // design
+//    1462 => "#E4460B", // mobile web
+//    1466 => "#0B83E4", // technology
+//    1464 => "#789C18", // scaling and infra
+//    1459 => "#2D88EC", // bangalore lifestyle
+//    1461 => "#E28815", // entrepreneurship
+//    1463 => "#701E7F", // rest of the world
+//    933 => "#9E2B1C", 
+//    1065 => "#9E2B1C" ); // techlash
+
 $TRACK_COLOR_MAPPING = array( 
-    1058 => "#770B47", 
-    1059 => "#0B5477", 
-    1060 => "#211B6D", 
-    1061 => "#789C18", 
-    1062 => "#2D88EC", 
-    1063 => "#E28815", 
-    1064 => "#701E7F", 
-    1065 => "#9E2B1C" );
+    1557 => "#770B47", // design
+    1559 => "#E4460B", // mobile web
+    1563 => "#E40B6C", // technology
+    1561 => "#789C18", // scaling and infra
+    1564 => "#2D88EC", // bangalore lifestyle
+    1558 => "#E28815", // entrepreneurship
+    1560 => "#701E7F", // rest of the world
+    933 => "#9E2B1C", 
+    1562 => "#9E2B1C" ); // techlash
+
+
+
+
 
 $DIFFICULTY_TAGS = array(945, 947, 946);
 ?>
