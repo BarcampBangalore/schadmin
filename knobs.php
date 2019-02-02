@@ -87,16 +87,29 @@ $SLOTS[12]["description"] = "Feedback Session. In a BCB tradition we all meet at
 //    933 => "#9E2B1C", 
 //    1065 => "#9E2B1C" ); // techlash
 
+// $TRACK_COLOR_MAPPING = array( 
+//     1761 => "#770B47", // design
+//     1559 => "#E4460B", // mobile web
+//     1563 => "#E40B6C", // technology
+//     1561 => "#789C18", // scaling and infra
+//     1564 => "#2D88EC", // bangalore lifestyle
+//     1558 => "#E28815", // entrepreneurship
+//     1560 => "#701E7F", // rest of the world
+//     933 => "#9E2B1C", 
+//     1562 => "#9E2B1C" ); // techlash
+
+
+// Spring 2019
 $TRACK_COLOR_MAPPING = array( 
-    1557 => "#770B47", // design
-    1559 => "#E4460B", // mobile web
-    1563 => "#E40B6C", // technology
-    1561 => "#789C18", // scaling and infra
-    1564 => "#2D88EC", // bangalore lifestyle
-    1558 => "#E28815", // entrepreneurship
-    1560 => "#701E7F", // rest of the world
+    1760 => "#f79423", // Blr & Lifestyle
+    1761 => "#ef5768", // Design
+    1762 => "#613516", // Entrepreneurship
+    1763 => "#507aa5", // mobile & web
+    1764 => "#7cb241", // Rest of the world
+    1765 => "#000000", // scaling & infra
+    1767 => "#f2e40c", // technology
     933 => "#9E2B1C", 
-    1562 => "#9E2B1C" ); // techlash
+    1766 => "#9E2B1C" ); // techlash
 
 
 
